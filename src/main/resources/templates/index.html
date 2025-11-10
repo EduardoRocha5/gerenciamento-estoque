@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Home - Finanças</title>
+</head>
+<body>
+
+    <div>
+        <h1>Finanças</h1>
+        <h3><a th:href="@{/produtos}">Produtos</a></h3>
+        <h3><a th:href="@{/categorias}">Categorias</a></h3>
+    </div>
+
+    <div>
+        <h2>Tabela de Produtos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Mostra a mensagem se não há produtos -->
+                <tr th:if="${paginaProduto.empty}">
+                    <td colspan="4">Nenhum produto cadastrado ainda!</td>
+                </tr>
+
+                <!-- Lista os produtos -->
+                <tr th:each="produto : ${paginaProduto}">
+                    <td th:text="${produto.id}">1</td>
+                    <td th:text="${produto.nome}">Produto Exemplo</td>
+                    <td th:text="${produto.categoria?.nome}">Categoria Exemplo</td>
+                    <td th:text="${#numbers.formatDecimal(produto.preco, 1, 2)}">0.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

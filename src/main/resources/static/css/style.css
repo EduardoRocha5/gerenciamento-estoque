@@ -1,0 +1,115 @@
+/* === Estilo geral === */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* === Cabeçalho da página === */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+header nav a:hover {
+    opacity: 0.8;
+}
+
+/* === Container da tabela === */
+.table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* === Título da seção === */
+.table-container h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* === Tabela com rolagem === */
+.table-wrapper {
+    max-height: 350px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Alternância de linhas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Linha hover */
+tbody tr:hover {
+    background-color: #eef3ff;
+}
+
+/* === Barra de rolagem personalizada === */
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+/* === Mensagem de tabela vazia === */
+td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
