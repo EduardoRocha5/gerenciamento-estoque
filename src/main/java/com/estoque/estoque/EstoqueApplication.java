@@ -9,7 +9,7 @@ public class EstoqueApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EstoqueApplication.class, args);
 		System.out.println("Sistema Iniciado...");
-		System.out.println("http:/localhost:8080");
+		System.out.println("http://localhost:8080");
 	}
 
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/stylep.css}">
     <title>Cadastro de Produtos</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
 
         <label>Categoria:</label>
      <select th:field="*{categoria.id}">
-    <option th:value="${null}">Selecione uma categoria</option>
+    <option th:value="${null}" disabled selected>Selecione uma categoria</option>
     <option th:each="cat : ${categorias}" 
             th:value="${cat.id}" 
             th:text="${cat.nome}">

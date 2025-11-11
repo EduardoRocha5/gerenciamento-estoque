@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/stylec.css}">
     <title>Cadastro de Categorias</title>
 </head>
-
 <body>
+    <div class="categoria-container">
+        <h1>Cadastro de Categoria</h1>
 
-    <h1>Cadastro de Categoria</h1>
-
-    <form th:action="@{/categorias/adicionar}" th:object="${novaCategoria}" method="post">
-        <label>Nome da Categoria:</label>
-        <input type="text" th:field="*{nome}" placeholder="Digite o nome da categoria" required />
-
-        <button type="submit">Cadastrar</button>
-    </form>
-
-    <hr>
-
-    <h2>Categorias cadastradas</h2>
-
-    <ul>
-        <li th:each="cat : ${categorias}" th:text="${cat.nome}">Nome da Categoria</li>
-    </ul>
-
+        <form th:action="@{/categorias/adicionar}" th:object="${novaCategoria}" method="post">
+            <label>Nome da Categoria:</label>
+            <input type="text" th:field="*{nome}" placeholder="Digite o nome da categoria" required />
+            <button type="submit">Cadastrar</button>
+        </form>
+        <hr>
+        <h2>Categorias cadastradas</h2>
+        <ul>
+            <li th:each="cat : ${categorias}" th:text="${cat.nome}">Nome da Categoria</li>
+        </ul>
+    </div>
+      <a th:href="@{/}">⬅ Voltar para a Página Inicial</a>
 </body>
+
 </html>
