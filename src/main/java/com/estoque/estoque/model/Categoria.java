@@ -1,50 +1,33 @@
-package com.estoque.estoque.model;
+    package com.estoque.estoque.model;
 
-import java.util.List;
+    import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+    import jakarta.persistence.Entity;
+    import jakarta.persistence.GeneratedValue;
+    import jakarta.persistence.GenerationType;
+    import jakarta.persistence.Id;
+    import jakarta.persistence.OneToMany;
+    import jakarta.validation.constraints.NotBlank;
+    import jakarta.validation.constraints.Size;
 
-@Entity
-public class Categoria {
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
+    import lombok.AllArgsConstructor;
 
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Entity
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public class Categoria {
 
-    private String nome;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Produto> produtos;
+        @NotBlank(message = "O nome da categoria é obrigatório.")
+        @Size(min = 3, max = 100, message = "O nome deve ter entre 3 e 100 caracteres.")
+        private String nome;
 
-    public Long getId() {
-        return id;
+        @OneToMany(mappedBy = "categoria")
+        private List<Produto> produtos;
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
-    
-    
-}

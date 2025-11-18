@@ -34,11 +34,11 @@ public class ProdutoService {
 
     }
 
-    public String exluirProduto(@PathVariable Long id) {
+    public void exluirProduto(@PathVariable Long id) {
 
         produtoRepository.deleteById(id);
-        return "redirect:/";
 
+       
     }
 
 }

@@ -8,6 +8,6 @@ import com.estoque.estoque.model.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria , Long >{
 
-
+    boolean existsByNome(String nome);
 
 }
