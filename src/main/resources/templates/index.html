@@ -23,12 +23,13 @@
                     <th>Nome</th>
                     <th>Categoria</th>
                     <th>Preço</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Mostra a mensagem se não há produtos -->
                 <tr th:if="${paginaProduto.empty}">
-                    <td colspan="4">Nenhum produto cadastrado ainda!</td>
+                    <td colspan="5" >Nenhum produto cadastrado ainda!</td>
                 </tr>
 
                 <!-- Lista os produtos -->
@@ -37,6 +38,7 @@
                     <td th:text="${produto.nome}">Produto Exemplo</td>
                     <td th:text="${produto.categoria?.nome}">Categoria Exemplo</td>
                     <td th:text="${#numbers.formatDecimal(produto.preco, 1, 2)}">0.00</td>
+                    <td><a th:href="@{/excluir/{id}(id=${produto.id})}" onclick="return confirm('Tem Certeza que deseja exluir esse produto?')">Excluir</a></td>
                 </tr>
             </tbody>
         </table>
